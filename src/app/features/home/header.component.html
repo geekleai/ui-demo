@@ -1,0 +1,19 @@
+<header class="bg-green-600 text-white px-4 py-2">
+  <div class="flex justify-between items-center">
+    <div class="flex items-center">
+      <img src="assets/logo.svg" alt="Logo" class="h-8 w-auto mr-2">
+      <span class="text-xl font-bold">Geekle IA Demo</span>
+      <nav class="ml-2">
+        <ul class="flex space-x-4">
+          <li><a routerLink="/demo" class="hover:text-green-200">Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex items-center">
+      <div class="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-green-200 transition-colors duration-200">
+        <fa-icon [icon]="['fas', 'user']" class="text-green-600 text-lg"></fa-icon>
+      </div>
+    </div>
+  </div>
+</header>
