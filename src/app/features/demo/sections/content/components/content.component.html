@@ -1,0 +1,20 @@
+<div class="flex h-full">
+  <!-- Markdown -->
+  <div class="w-1/2 bg-white overflow-y-auto">
+    @if (markdownContent()) {
+      <component-markdown-viewer [markdownContent]="markdownContent()!" />
+    } @else {
+      <div class="flex items-center justify-center h-full">
+        <div class="animate-spin h-5 w-5 mr-3 border-t-2 border-b-2 border-gray-900 rounded-full">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Graph -->
+  <div class="w-1/2 overflow-y-auto">
+    Graph
+    <!-- <component-interactive-section /> -->
+  </div>
+</div>
