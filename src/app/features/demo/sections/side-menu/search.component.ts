@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 
 @Component({
@@ -6,7 +6,8 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
   imports: [
     FaIconComponent
   ],
-  templateUrl: "./search.component.html"
+  templateUrl: "./search.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {
 

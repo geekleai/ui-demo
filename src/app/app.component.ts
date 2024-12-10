@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
 import { FontAwesomeIconLibraryModule } from "./shared/modules/font-awesome/font-awesome-icon-library.module";
@@ -9,7 +9,8 @@ import { FontAwesomeIconLibraryModule } from "./shared/modules/font-awesome/font
   template: `
     <main>
       <router-outlet></router-outlet>
-    </main>`
+    </main>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = "Geekle_AI_Demo";

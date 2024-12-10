@@ -1,5 +1,5 @@
 import { NgClass } from "@angular/common";
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 import { MenuItem } from "./menu-item.model";
 import { SearchComponent } from "./search.component";
@@ -10,7 +10,8 @@ import { SearchComponent } from "./search.component";
     NgClass,
     SearchComponent
   ],
-  templateUrl: "./side-menu.component.html"
+  templateUrl: "./side-menu.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideMenuComponent {
   protected menuItems: MenuItem[] = [

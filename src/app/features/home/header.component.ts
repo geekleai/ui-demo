@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 
@@ -8,7 +8,8 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
     FaIconComponent,
     RouterLink
   ],
-  templateUrl: "./header.component.html"
+  templateUrl: "./header.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
 
