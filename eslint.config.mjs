@@ -42,7 +42,7 @@ export default [
         "error",
         {
           "groups": [
-            ["^@angular", "^@nestjs", "^@", "^ngx"],
+            ["^@angular", "^@nestjs", "^@", "^ngx", "rxjs"],
             ["^[a-z]"],
             ["^~"],
             ["^\\."]

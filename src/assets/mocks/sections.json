@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Introduction"
+  },
+  {
+    "name": "User Authentication",
+    "subSections": [
+      { "name": "Login Service" },
+      { "name": "Registration Handler" },
+      { "name": "Password Recovery Service" },
+      { "name": "Multi-Factor Authentication (MFA)" }
+    ]
+  },
+  {
+    "name": "Account Management",
+    "subSections": [
+      { "name": "Profile Management" },
+      { "name": "Preferences Module" },
+      { "name": "Linked Accounts Handler" }
+    ]
+  },
+  {
+    "name": "Payments Processing",
+    "subSections": [
+      { "name": "Payment Gateway Integration" },
+      { "name": "Transaction Validator" },
+      { "name": "Refund Handler" }
+    ]
+  },
+  {
+    "name": "Risk Assessment",
+    "subSections": [
+      { "name": "Fraud Detection Service" },
+      { "name": "Behavioral Analysis Engine" },
+      { "name": "Risk Scoring Algorithm" }
+    ]
+  },
+  {
+    "name": "Portfolio Management",
+    "subSections": [
+      { "name": "Portfolio Tracker" },
+      { "name": "Performance Analytics" },
+      { "name": "Asset Allocation Optimizer" }
+    ]
+  },
+  {
+    "name": "Notifications and Alerts",
+    "subSections": [
+      { "name": "Notification Sender" },
+      { "name": "Subscription Manager" },
+      { "name": "Template Engine" }
+    ]
+  },
+  {
+    "name": "Analytics Dashboard",
+    "subSections": [
+      { "name": "Data Visualization Module" },
+      { "name": "Report Generator" }
+    ]
+  },
+  {
+    "name": "Admin Panel",
+    "subSections": [
+      { "name": "API Gateway" },
+      { "name": "Request Router" },
+      { "name": "Authentication Middleware" },
+      { "name": "Rate Limiter" }
+    ]
+  },
+  {
+    "name": "Transaction History",
+    "subSections": [
+      { "name": "Transaction Logger" },
+      { "name": "Export Service" },
+      { "name": "Search and Filter Engine" }
+    ]
+  },
+  {
+    "name": "Compliance and Reporting",
+    "subSections": [
+      { "name": "KYC Verification Module" },
+      { "name": "AML Checker (Anti-Money Laundering)" },
+      { "name": "Audit Log Generator" }
+    ]
+  }
+]

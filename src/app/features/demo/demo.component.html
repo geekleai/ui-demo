@@ -1,16 +1,11 @@
 <div class="flex h-screen">
-  <!-- Left Section -->
+  <!-- Section menu items -->
   <div class="w-1/4 bg-gray-100 p-4 overflow-y-auto">
     <component-side-menu />
   </div>
 
-  <!-- Middle Section -->
-  <div class="w-1/2 p-4 overflow-y-auto">
-    <component-markdown-section [markdownContent]="markdownContent" />
-  </div>
-
-  <!-- Right Section -->
-  <div class="w-1/4 bg-gray-50 p-4 overflow-y-auto">
-    <component-interactive-section />
+  <!-- Dynamic content -->
+  <div class="w-3/4">
+    <router-outlet />
   </div>
 </div>

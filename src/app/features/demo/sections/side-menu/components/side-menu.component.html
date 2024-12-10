@@ -1,0 +1,44 @@
+<h2 class="text-xl font-bold mb-4">Geekle AI Demo</h2>
+<component-search class="mb-4 block" />
+
+@if (!!menuItems()) {
+  <ul class="space-y-2">
+    @for (item of menuItems(); track item.name) {
+      <li>
+        <div
+          (click)="selectMenuItem(item)"
+          class="flex justify-between items-center p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer"
+          [ngClass]="{'bg-gray-200': item.selected}"
+        >
+          <span>{{ item.name }}</span>
+          @if (item.children) {
+            <span class="text-sm transition-transform duration-200 ease-in-out"
+                  [ngClass]="{'transform rotate-180': item.expanded}">
+              ▼
+            </span>
+          }
+        </div>
+        @if (item.children) {
+          <ul
+            class="mt-2 ml-4 space-y-1 overflow-hidden transition-all duration-200 ease-in-out"
+            [ngClass]="{'max-h-0': !item.expanded, 'max-h-[1000px]': item.expanded}"
+          >
+            @for (child of item.children; track child.name) {
+              <li
+                (click)="selectMenuItem(child)"
+                class="p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer"
+                [ngClass]="{'bg-gray-200': child.selected}">
+                {{ child.name }}
+              </li>
+            }
+          </ul>
+        }
+      </li>
+    }
+  </ul>
+} @else {
+  <div class="animate-spin h-5 w-5 mr-3 inline-flex items-center justify-center">
+    <fa-icon [icon]="['fas', 'spinner']" />
+  </div>
+  <span>Loading sections...</span>
+}

@@ -1,13 +1,14 @@
 import { NgModule } from "@angular/core";
 import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
-import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faSpinner, faUser } from "@fortawesome/free-solid-svg-icons";
 
 @NgModule()
 export class FontAwesomeSolidIconsConfigurationModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
       faUser,
-      faSearch
+      faSearch,
+      faSpinner
     );
   }
 }
