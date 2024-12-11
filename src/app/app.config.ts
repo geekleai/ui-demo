@@ -10,6 +10,8 @@ import { TitleService } from "./core/services/title.service";
 
 import "prismjs";
 import "prismjs/components/prism-typescript.min.js";
+import "prismjs/components/prism-python.min.js";
+import "prismjs/components/prism-java.min.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 
 export const appConfig: ApplicationConfig = {

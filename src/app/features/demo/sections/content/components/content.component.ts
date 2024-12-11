@@ -23,10 +23,13 @@ export class ContentComponent implements OnInit {
     this._route.url.pipe(
       takeUntilDestroyed(this._destroyRef)
     ).subscribe(segments => {
-      const segmentName = segments[segments.length - 1].path;
-      this._markdownsService.get(segmentName).subscribe(markdown => {
-        this.markdownContent.set(markdown);
-      });
+      if (segments.length) {
+        const segmentName = segments[segments.length - 1].path;
+        this.markdownContent.set(undefined);
+        this._markdownsService.get(segmentName).subscribe(markdown => {
+          this.markdownContent.set(markdown);
+        });
+      }
     });
   }
 }

@@ -8,7 +8,7 @@
         <div
           (click)="selectMenuItem(item)"
           class="flex justify-between items-center p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer"
-          [ngClass]="{'bg-gray-200': item.selected}"
+          [ngClass]="{'bg-gray-200': isItemHighlighted(item)}"
         >
           <span>{{ item.name }}</span>
           @if (item.children) {
@@ -27,7 +27,7 @@
               <li
                 (click)="selectMenuItem(child)"
                 class="p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer"
-                [ngClass]="{'bg-gray-200': child.selected}">
+                [ngClass]="{'bg-gray-200': isItemHighlighted(child)}">
                 {{ child.name }}
               </li>
             }
@@ -42,4 +42,3 @@
     <span>Loading sections...</span>
   </div>
 }
-
