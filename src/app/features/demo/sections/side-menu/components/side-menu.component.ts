@@ -30,9 +30,10 @@ export class SideMenuComponent implements OnInit {
   ngOnInit(): void {
     this._sectionsService.getAll().subscribe(sections => {
       const menuItems: MenuItem[] = this.buildMenuItems(sections);
+      const decodedUrl = decodeURIComponent(this._router.url);
       this.menuItems.set(menuItems);
-      this.currentUrl.set(this._router.url); // Set the initial URL
-      this.updateMenuBasedOnUrl(this._router.url);
+      this.currentUrl.set(decodedUrl); // Set the initial URL
+      this.updateMenuBasedOnUrl(decodedUrl);
     });
   }
 

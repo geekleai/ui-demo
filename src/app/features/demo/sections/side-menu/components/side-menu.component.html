@@ -31,14 +31,17 @@
               </div>
               @if (item.children) {
                 <ul
-                  class="mt-2 ml-4 space-y-1 overflow-hidden transition-all duration-200 ease-in-out"
-                  [ngClass]="{'max-h-0': !item.expanded, 'max-h-[1000px]': item.expanded}"
+                  class="mt-2 ml-4 space-y-1 overflow-hidden transition-all duration-200 ease-in-out border-l-2 border-gray-200"
+                  [ngClass]="{'max-h-0 border-l-0': !item.expanded, 'max-h-[1000px]': item.expanded}"
                 >
                   @for (child of item.children; track child.name) {
                     <li
                       (click)="selectMenuItem(child)"
-                      class="p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer text-sm font-normal"
-                      [ngClass]="{'bg-gray-200': isItemHighlighted(child)}"
+                      class="p-2 hover:bg-gray-200 transition-colors duration-200 ease-in-out cursor-pointer text-sm font-normal border-l-4"
+                      [ngClass]="{
+                        'bg-gray-200 border-green-600': isItemHighlighted(child),
+                        'border-transparent': !isItemHighlighted(child)
+                      }"
                     >
                       {{ child.name }}
                     </li>
