@@ -25,11 +25,13 @@ interface MenuItem {
 export class SideMenuComponent implements OnInit {
   protected menuItems: WritableSignal<MenuItem[] | undefined> = signal<MenuItem[] | undefined>(undefined);
   protected currentUrl: WritableSignal<string> = signal("");
+  protected readonly sections: WritableSignal<SectionModel[]> = signal<SectionModel[]>([]);
   private readonly _sectionsService = inject(SectionsService);
   private readonly _router = inject(Router);
 
   ngOnInit(): void {
     this._sectionsService.getAll().subscribe(sections => {
+      this.sections.set(sections);
       const menuItems: MenuItem[] = this.buildMenuItems(sections);
       const decodedUrl = decodeURIComponent(this._router.url);
       this.menuItems.set(menuItems);
