@@ -18,10 +18,15 @@
             <li>
               <div
                 (click)="selectMenuItem(item)"
-                class="flex justify-between items-center p-2 hover:bg-gray-200 rounded transition-colors duration-200 ease-in-out cursor-pointer"
-                [ngClass]="{'bg-gray-200': isItemHighlighted(item)}"
+                class="flex justify-between items-center p-2 hover:bg-gray-100 rounded transition-colors duration-200 ease-in-out cursor-pointer"
+                [ngClass]="{'bg-gray-100': isItemHighlighted(item)}"
               >
-                <span class="font-semibold text-gray-800">{{ item.name }}</span>
+                <span class="font-semibold text-gray-800">
+                  {{ item.name }}
+                  @if (item.isReviewed) {
+                    <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: item}" />
+                  }
+                </span>
                 @if (item.children) {
                   <span class="text-sm transition-transform duration-200 ease-in-out text-gray-500"
                         [ngClass]="{'transform rotate-180': item.expanded}">
@@ -37,13 +42,16 @@
                   @for (child of item.children; track child.name) {
                     <li
                       (click)="selectMenuItem(child)"
-                      class="p-2 hover:bg-gray-200 transition-colors duration-200 ease-in-out cursor-pointer text-sm font-normal border-l-4"
+                      class="p-2 hover:bg-gray-100 transition-colors duration-200 ease-in-out cursor-pointer text-sm font-normal border-l-4"
                       [ngClass]="{
-                        'bg-gray-200 border-green-600': isItemHighlighted(child),
+                        'bg-gray-100 border-green-600': isItemHighlighted(child),
                         'border-transparent': !isItemHighlighted(child)
                       }"
                     >
                       {{ child.name }}
+                      @if (child.isReviewed) {
+                        <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: child}" />
+                      }
                     </li>
                   }
                 </ul>
@@ -60,3 +68,8 @@
     </div>
   </div>
 </div>
+
+<ng-template #approved let-menuItem="menuItem">
+  <span class="text-green-500 ml-1"
+        title="Approved by {{menuItem.reviewedBy}} on {{(menuItem.reviewedDate | date:'medium')}}">✅</span>
+</ng-template>

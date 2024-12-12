@@ -1,86 +1,119 @@
 [
   {
-    "name": "Introduction"
+    "name": "Introduction",
+    "isReviewed": true,
+    "reviewedBy": "Mark Twain",
+    "reviewedDate": "2023-05-15T14:30:00"
   },
   {
     "name": "User Authentication",
+    "isReviewed": true,
+    "reviewedBy": "Alan Turing",
+    "reviewedDate": "2023-05-16T09:45:00",
     "subSections": [
-      { "name": "Login Service" },
-      { "name": "Registration Handler" },
-      { "name": "Password Recovery Service" },
-      { "name": "Multi-Factor Authentication (MFA)" }
+      { "name": "Login Service", "isReviewed": true, "reviewedBy": "John Doe", "reviewedDate": "2023-05-15T11:20:00" },
+      { "name": "Registration Handler", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Password Recovery Service", "isReviewed": true, "reviewedBy": "Jane Smith", "reviewedDate": "2023-05-10T16:55:00" },
+      { "name": "Multi-Factor Authentication (MFA)", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Account Management",
+    "isReviewed": false,
+    "reviewedBy": null,
+    "reviewedDate": null,
     "subSections": [
-      { "name": "Profile Management" },
-      { "name": "Preferences Module" },
-      { "name": "Linked Accounts Handler" }
+      { "name": "Profile Management", "isReviewed": true, "reviewedBy": "Alice Johnson", "reviewedDate": "2023-05-12T10:15:00" },
+      { "name": "Preferences Module", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Linked Accounts Handler", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Payments Processing",
+    "isReviewed": true,
+    "reviewedBy": "Warren Buffett",
+    "reviewedDate": "2023-05-17T13:40:00",
     "subSections": [
-      { "name": "Payment Gateway Integration" },
-      { "name": "Transaction Validator" },
-      { "name": "Refund Handler" }
+      { "name": "Payment Gateway Integration", "isReviewed": true, "reviewedBy": "Bob Wilson", "reviewedDate": "2023-05-14T09:30:00" },
+      { "name": "Transaction Validator", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Refund Handler", "isReviewed": true, "reviewedBy": "Charlie Brown", "reviewedDate": "2023-05-11T14:20:00" }
     ]
   },
   {
     "name": "Risk Assessment",
+    "isReviewed": false,
+    "reviewedBy": null,
+    "reviewedDate": null,
     "subSections": [
-      { "name": "Fraud Detection Service" },
-      { "name": "Behavioral Analysis Engine" },
-      { "name": "Risk Scoring Algorithm" }
+      { "name": "Fraud Detection Service", "isReviewed": true, "reviewedBy": "Diana Prince", "reviewedDate": "2023-05-13T11:45:00" },
+      { "name": "Behavioral Analysis Engine", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Risk Scoring Algorithm", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Portfolio Management",
+    "isReviewed": true,
+    "reviewedBy": "Peter Lynch",
+    "reviewedDate": "2023-05-18T10:20:00",
     "subSections": [
-      { "name": "Portfolio Tracker" },
-      { "name": "Performance Analytics" },
-      { "name": "Asset Allocation Optimizer" }
+      { "name": "Portfolio Tracker", "isReviewed": true, "reviewedBy": "Ethan Hunt", "reviewedDate": "2023-05-09T15:30:00" },
+      { "name": "Performance Analytics", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Asset Allocation Optimizer", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Notifications and Alerts",
+    "isReviewed": false,
+    "reviewedBy": null,
+    "reviewedDate": null,
     "subSections": [
-      { "name": "Notification Sender" },
-      { "name": "Subscription Manager" },
-      { "name": "Template Engine" }
+      { "name": "Notification Sender", "isReviewed": true, "reviewedBy": "Fiona Gallagher", "reviewedDate": "2023-05-08T13:10:00" },
+      { "name": "Subscription Manager", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Template Engine", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Analytics Dashboard",
+    "isReviewed": true,
+    "reviewedBy": "Nate Silver",
+    "reviewedDate": "2023-05-19T11:05:00",
     "subSections": [
-      { "name": "Data Visualization Module" },
-      { "name": "Report Generator" }
+      { "name": "Data Visualization Module", "isReviewed": true, "reviewedBy": "George Lucas", "reviewedDate": "2023-05-07T10:45:00" },
+      { "name": "Report Generator", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Admin Panel",
+    "isReviewed": false,
+    "reviewedBy": null,
+    "reviewedDate": null,
     "subSections": [
-      { "name": "API Gateway" },
-      { "name": "Request Router" },
-      { "name": "Authentication Middleware" },
-      { "name": "Rate Limiter" }
+      { "name": "API Gateway", "isReviewed": true, "reviewedBy": "Hannah Montana", "reviewedDate": "2023-05-06T14:50:00" },
+      { "name": "Request Router", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Authentication Middleware", "isReviewed": true, "reviewedBy": "Ian Malcolm", "reviewedDate": "2023-05-05T09:15:00" },
+      { "name": "Rate Limiter", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Transaction History",
+    "isReviewed": true,
+    "reviewedBy": "Satoshi Nakamoto",
+    "reviewedDate": "2023-05-20T15:30:00",
     "subSections": [
-      { "name": "Transaction Logger" },
-      { "name": "Export Service" },
-      { "name": "Search and Filter Engine" }
+      { "name": "Transaction Logger", "isReviewed": true, "reviewedBy": "Julia Roberts", "reviewedDate": "2023-05-04T11:25:00" },
+      { "name": "Export Service", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Search and Filter Engine", "isReviewed": false, "reviewedBy": null, "reviewedDate": null }
     ]
   },
   {
     "name": "Compliance and Reporting",
+    "isReviewed": false,
+    "reviewedBy": null,
+    "reviewedDate": null,
     "subSections": [
-      { "name": "KYC Verification Module" },
-      { "name": "AML Checker (Anti-Money Laundering)" },
-      { "name": "Audit Log Generator" }
+      { "name": "KYC Verification Module", "isReviewed": true, "reviewedBy": "Kevin Costner", "reviewedDate": "2023-05-03T16:40:00" },
+      { "name": "AML Checker (Anti-Money Laundering)", "isReviewed": false, "reviewedBy": null, "reviewedDate": null },
+      { "name": "Audit Log Generator", "isReviewed": true, "reviewedBy": "Liam Neeson", "reviewedDate": "2023-05-02T13:55:00" }
     ]
   }
 ]

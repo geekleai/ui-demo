@@ -1,7 +1,6 @@
-import { NgClass } from "@angular/common";
+import { DatePipe, NgClass, NgTemplateOutlet } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal, WritableSignal } from "@angular/core";
 import { Router } from "@angular/router";
-import { BehaviorSubject } from "rxjs";
 
 import { SectionModel } from "../models/section.model";
 import { SectionsService } from "../services/sections.service";
@@ -12,20 +11,22 @@ interface MenuItem {
   children?: MenuItem[];
   expanded?: boolean;
   path?: string;
+  isReviewed?: boolean;
+  reviewedBy?: string;
+  reviewedDate?: Date;
 }
 
 @Component({
   selector: "component-side-menu",
   templateUrl: "./side-menu.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, SearchComponent]
+  imports: [NgClass, SearchComponent, DatePipe, NgTemplateOutlet]
 })
 export class SideMenuComponent implements OnInit {
   protected menuItems: WritableSignal<MenuItem[] | undefined> = signal<MenuItem[] | undefined>(undefined);
   protected currentUrl: WritableSignal<string> = signal("");
   private readonly _sectionsService = inject(SectionsService);
   private readonly _router = inject(Router);
-  private readonly _menuItemsLoaded$ = new BehaviorSubject<boolean>(false);
 
   ngOnInit(): void {
     this._sectionsService.getAll().subscribe(sections => {
@@ -61,7 +62,10 @@ export class SideMenuComponent implements OnInit {
         name: section.name,
         children: section.subSections ? this.buildMenuItems(section.subSections, path) : undefined,
         path: path,
-        expanded: false
+        expanded: false,
+        isReviewed: section.isReviewed,
+        reviewedBy: section.reviewedBy,
+        reviewedDate: section.reviewedDate
       };
     });
   }
