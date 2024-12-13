@@ -1,0 +1,14 @@
+<ul>
+  @for (header of headersStore.sortedHeaders(); track header.id) {
+    <li class="mb-1">
+      <a
+        [attr.data-target]="header.id"
+        class="text-blue-600 hover:underline cursor-pointer"
+        [style.padding-left.px]="(header.level - 1) * 12"
+        (click)="scrollToSection(header.id)"
+      >
+        {{ header.text }}
+      </a>
+    </li>
+  }
+</ul>

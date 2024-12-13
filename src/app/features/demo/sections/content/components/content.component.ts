@@ -3,6 +3,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute } from "@angular/router";
 
 import { MarkdownsService } from "../services/markdowns.service";
+import { HeadersStore } from "../store/headers.store";
 import { InteractiveSectionComponent } from "./interactive/components/interactive-section.component";
 import { MarkdownViewerComponent } from "./markdown/markdown-viewer.component";
 
@@ -12,6 +13,9 @@ import { MarkdownViewerComponent } from "./markdown/markdown-viewer.component";
   imports: [
     MarkdownViewerComponent,
     InteractiveSectionComponent
+  ],
+  providers: [
+    HeadersStore
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
