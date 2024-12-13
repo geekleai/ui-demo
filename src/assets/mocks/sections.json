@@ -1,9 +1,6 @@
 [
   {
-    "name": "Introduction",
-    "isReviewed": true,
-    "reviewedBy": "Mark Twain",
-    "reviewedDate": "2023-05-15T14:30:00"
+    "name": "Introduction"
   },
   {
     "name": "User Authentication",

@@ -1,6 +1,7 @@
 import { DatePipe, NgClass, NgTemplateOutlet } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal, WritableSignal } from "@angular/core";
 import { Router } from "@angular/router";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 
 import { SectionModel } from "../models/section.model";
 import { SectionsService } from "../services/sections.service";
@@ -20,7 +21,7 @@ interface MenuItem {
   selector: "component-side-menu",
   templateUrl: "./side-menu.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, SearchComponent, DatePipe, NgTemplateOutlet]
+  imports: [NgClass, SearchComponent, DatePipe, NgTemplateOutlet, FaIconComponent]
 })
 export class SideMenuComponent implements OnInit {
   protected menuItems: WritableSignal<MenuItem[] | undefined> = signal<MenuItem[] | undefined>(undefined);

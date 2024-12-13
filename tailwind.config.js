@@ -6,6 +6,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          '"??"',
+          'ui-sans-serif',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Roboto',
+          '"Helvetica"',
+          '"Arial"',
+          '"Segoe UI"',
+          '"Inter"',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Microsoft YaHei Light"',
+          'sans-serif',
+        ],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
