@@ -23,12 +23,7 @@ export class MarkdownsService {
     sectionName = this.processSectionName(sectionName);
 
     const regex = new RegExp(`\\{\\{SECTION_NAME\\}\\}`, "g");
-    const processedTemplate = template.replace(regex, sectionName);
-    /* for (const [key, value] of Object.entries(replacements)) {
-      const regex = new RegExp(`\\{\\{${key}\\}\\}`, "g");
-      processedTemplate = processedTemplate.replace(regex, value);
-    } */
-    return processedTemplate;
+    return template.replace(regex, sectionName);
   }
 
   private processSectionName(sectionName: string): string {

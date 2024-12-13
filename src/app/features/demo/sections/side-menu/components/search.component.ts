@@ -12,7 +12,7 @@ import {
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
-import { debounceTime, distinctUntilChanged, groupBy } from "rxjs";
+import { debounceTime, distinctUntilChanged } from "rxjs";
 
 import { SectionModel } from "../models/section.model";
 
@@ -72,7 +72,7 @@ export class SearchComponent implements OnInit {
   }
 
   protected onResultClick(result: SearchResult): void {
-    const path = `demo/${encodeURIComponent(result.parentName)}/${encodeURIComponent(result.name)}`;
+    const path = `demo/${encodeURIComponent(result.parentName)}/${encodeURIComponent(result.name)}`.replace(" ", "-");
     this._router.navigate([path]);
     this.searchControl.setValue("");
   }
@@ -92,8 +92,8 @@ export class SearchComponent implements OnInit {
       section.subSections?.forEach(subSection => {
         if (subSection.name.toLowerCase().includes(lowercaseSearchTerm)) {
           results.push({
-            name: subSection.name.replace(" ", "-"),
-            parentName: section.name.replace(" ", "-")
+            name: subSection.name,
+            parentName: section.name
           });
         }
       });
