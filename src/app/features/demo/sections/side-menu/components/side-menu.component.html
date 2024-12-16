@@ -24,16 +24,24 @@
                 @if (item.children) {
                   <span class="mr-2 transition-transform duration-200 ease-in-out text-gray-500 w-4 h-4 inline-flex items-center justify-center"
                         [ngClass]="{'transform rotate-90': item.expanded}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="16"
+                         height="16"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="svg-icon right-triangle">
                       <path d="M9 18l6-6-6-6"></path>
                     </svg>
                   </span>
                 }
                 <span class="font-semibold text-sm text-gray-800 flex-grow">
                   {{ item.name }}
-                  @if (item.isReviewed) {
-                    <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: item}" />
-                  }
+                  <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: item}" />
+
                 </span>
               </div>
               @if (item.children) {
@@ -51,9 +59,7 @@
                       }"
                     >
                       {{ child.name }}
-                      @if (child.isReviewed) {
-                        <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: child}" />
-                      }
+                      <ng-template [ngTemplateOutlet]="approved" [ngTemplateOutletContext]="{menuItem: child}" />
                     </li>
                   }
                 </ul>
@@ -72,8 +78,14 @@
 </div>
 
 <ng-template #approved let-menuItem="menuItem">
-  <span class="text-green-500 ml-1"
-        title="Approved by {{menuItem.reviewedBy}} on {{(menuItem.reviewedDate | date:'medium')}}">
-    <fa-icon [icon]="['fas', 'check']"></fa-icon>
-  </span>
+  @if (menuItem.isReviewed) {
+    <span class="text-green-500 ml-1"
+          title="Approved by {{menuItem.reviewedBy}} on {{(menuItem.reviewedDate | date:'medium')}}">
+      <fa-icon [icon]="['fas', 'check']"></fa-icon>
+    </span>
+  } @else {
+    <span class="text-gray-400 ml-1">
+      <fa-icon [icon]="['fas', 'check']"></fa-icon>
+    </span>
+  }
 </ng-template>

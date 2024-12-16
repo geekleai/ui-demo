@@ -35,23 +35,24 @@ export class InteractiveGraphComponent implements OnInit {
       { id: 10, label: "Database Module", group: "5" }
     ]);
 
+    const edgesConnectionColor = "#7e7f81";
     const edges = new DataSet([
-      { id: 1, from: 1, to: 2 },
-      { id: 2, from: 1, to: 3 },
-      { id: 3, from: 1, to: 4 },
-      { id: 4, from: 2, to: 3 },
-      { id: 5, from: 3, to: 4 },
-      { id: 6, from: 3, to: 5 },
-      { id: 7, from: 4, to: 6 },
-      { id: 8, from: 4, to: 7 },
-      { id: 9, from: 5, to: 8 },
-      { id: 10, from: 6, to: 7 },
-      { id: 11, from: 7, to: 8 },
-      { id: 12, from: 9, to: 1 },
-      { id: 13, from: 9, to: 2 },
-      { id: 14, from: 9, to: 3 },
-      { id: 15, from: 9, to: 4 },
-      { id: 16, from: 10, to: 9 }
+      { id: 1, from: 1, to: 2, color: edgesConnectionColor},
+      { id: 2, from: 1, to: 3, color: edgesConnectionColor },
+      { id: 3, from: 1, to: 4, color: edgesConnectionColor },
+      { id: 4, from: 2, to: 3, color: edgesConnectionColor },
+      { id: 5, from: 3, to: 4, color: edgesConnectionColor },
+      { id: 6, from: 3, to: 5, color: edgesConnectionColor },
+      { id: 7, from: 4, to: 6, color: edgesConnectionColor },
+      { id: 8, from: 4, to: 7, color: edgesConnectionColor },
+      { id: 9, from: 5, to: 8, color: edgesConnectionColor },
+      { id: 10, from: 6, to: 7, color: edgesConnectionColor },
+      { id: 11, from: 7, to: 8, color: edgesConnectionColor },
+      { id: 12, from: 9, to: 1, color: edgesConnectionColor },
+      { id: 13, from: 9, to: 2, color: edgesConnectionColor },
+      { id: 14, from: 9, to: 3, color: edgesConnectionColor },
+      { id: 15, from: 9, to: 4, color: edgesConnectionColor },
+      { id: 16, from: 10, to: 9, color: edgesConnectionColor }
     ]);
 
     const data: Data = {
@@ -59,17 +60,18 @@ export class InteractiveGraphComponent implements OnInit {
       edges: edges.get()
     };
 
+    const groupColor = "#999";
     const options = {
       nodes: {
         shape: "dot",
         size: 16
       },
       groups: {
-        1: { color: { background: "#FF9999" } },
-        2: { color: { background: "#99FF99" } },
-        3: { color: { background: "#9999FF" } },
-        4: { color: { background: "#FFFF99" } },
-        5: { color: { background: "#FF99FF" } }
+        1: { color: { background: groupColor } },
+        2: { color: { background: groupColor } },
+        3: { color: { background: groupColor } },
+        4: { color: { background: groupColor } },
+        5: { color: { background: groupColor } }
       },
       physics: {
         forceAtlas2Based: {
