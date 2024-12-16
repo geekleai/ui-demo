@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
+import { FontAwesomeBrandIconsConfigurationModule } from "./font-awesome-brand-icons-configuration.module";
 import { FontAwesomeRegularIconsConfigurationModule } from "./font-awesome-regular-icons-configuration.module";
 import { FontAwesomeSolidIconsConfigurationModule } from "./font-awesome-solid-icons-configuration.module";
 
@@ -8,7 +9,8 @@ import { FontAwesomeSolidIconsConfigurationModule } from "./font-awesome-solid-i
   imports: [
     FontAwesomeModule,
     FontAwesomeRegularIconsConfigurationModule,
-    FontAwesomeSolidIconsConfigurationModule
+    FontAwesomeSolidIconsConfigurationModule,
+    FontAwesomeBrandIconsConfigurationModule
   ],
   exports: [FontAwesomeModule]
 })

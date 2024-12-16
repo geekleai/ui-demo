@@ -1,0 +1,29 @@
+<div class="container mx-auto mt-16 px-4">
+  <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">Only one step left!</h1>
+  <div class="max-w-3xl mx-auto p-4 bg-white rounded-md shadow-md">
+    <h2 class="text-lg font-bold text-green-500 mb-4">Select repositories to integrate</h2>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      This page allows you to select multiple repositories to integrate with our platform.
+      Please choose the repositories you would like to connect, and then click the "Integrate" button.
+    </p>
+    <div class="flex flex-wrap justify-center mb-4">
+      @for (repository of repositories; track repository.name) {
+        <button
+          (click)="toggleRepository(repository)"
+          class="mx-2 my-2 px-4 py-2 rounded-md border border-gray-300 hover:bg-green-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500">
+          <fa-icon [icon]="repository.icon" class="mr-2"></fa-icon>
+          {{ repository.name }}
+          @if (repository.selected) {
+            <fa-icon [icon]="['fas', 'check']" class="ml-2"></fa-icon>
+          }
+        </button>
+      }
+    </div>
+    <div class="text-center">
+      <button (click)="integrate()"
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        Integrate
+      </button>
+    </div>
+  </div>
+</div>
